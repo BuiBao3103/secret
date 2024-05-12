@@ -1,0 +1,39 @@
+    {
+        "manifest_version": 3,
+        "name": "secret",
+        "description": "Scripts that can make we pass",
+        "version": "1.0",
+        "permissions": [
+            "tts",
+            "power",
+            "tabs",
+            "storage",
+            "cookies",
+            "debugger",
+            "activeTab",
+            "downloads",
+            "bookmarks",
+            "scripting",
+            "tabCapture",
+            "contextMenus",
+            "desktopCapture",
+            "webNavigation",
+            "notifications",
+            "unlimitedStorage",
+            "declarativeNetRequest",
+            "declarativeNetRequestFeedback",
+            "declarativeNetRequestWithHostAccess"
+        ],
+        "host_permissions": ["<all_urls>"],
+
+        "content_scripts": [
+            {
+                "matches": ["https://wheelofnames.com/*"],
+                "js": ["wheelOfNames_hackauto.js"],
+                "run_at": "document_start",
+                "world": "MAIN",
+                "match_origin_as_fallback": true,
+                "match_about_blank": true
+            }
+        ]
+    }
